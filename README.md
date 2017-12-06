@@ -8,9 +8,15 @@ The script has been tested in various projects, and the languages it has been ap
 
 The script requires that FST-tools are installed (xfst for the current version, migration to [hfst](https://hfst.github.io/) is planned), and there is access to compiled transducers. In order to compile the transducers it is necessary to install complete [Giellatekno infrastructure](http://giellatekno.uit.no/doc/infra/infraremake/GettingStartedWithTheNewInfra.html).
 
+![](https://imgur.com/iA99VGz.png)
+
 ## Authors
 
 The script is written by Ciprian Gerstenberger, and collaboration in the presented workflow has taken place with Niko Partanen, Michael Rießler and Joshua Wilbur.
+
+## Funding
+
+Work of Niko Partanen and Michael Rießler has been funded by [Kone Foundation](https://koneensaatio.fi) within [IKDP-2](https://github.com/langdoc/IKDP-2) research project.
 
 ## Citing
 
