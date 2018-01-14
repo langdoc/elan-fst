@@ -4,6 +4,8 @@ This repository contains the scripts used in workflows which are described in th
 
 The script has been tested in various projects, and the languages it has been applied by now are Komi-Zyrian, Kildin Saami, Pite Saami and Northern Saami.
 
+Migration from Giellatekno SVN to GitHub was done in SVN Revision 162169.
+
 ## Using the scripts
 
 The script requires that FST-tools are installed (xfst for the current version, migration to [hfst](https://hfst.github.io/) is planned), and there is access to compiled transducers. In order to compile the transducers it is necessary to install complete [Giellatekno infrastructure](http://giellatekno.uit.no/doc/infra/infraremake/GettingStartedWithTheNewInfra.html).
