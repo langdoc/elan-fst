@@ -10,6 +10,21 @@ Migration from Giellatekno SVN to GitHub was done in SVN Revision 162169.
 
 The script requires FST-tools to be installed (xfst for the current version, migration to [hfst](https://hfst.github.io/) is planned), and there is access to compiled transducers. In order to compile the transducers it is necessary to install the complete [Giellatekno infrastructure](http://giellatekno.uit.no/doc/infra/infraremake/GettingStartedWithTheNewInfra.html).
 
+In this repository we have provided an already compiled transducer for Komi-Zyrian, and the both versions of the scripts can be run after installing lookup with:
+
+```
+git clone https://github.com/langdoc/elan-fst
+python2.7 add_pos2elan_p2.7.py
+```
+
+Or:
+
+```
+python3 add_pos2elan_p3.py
+```
+
+Image below describes the ideal workflow reached with the script.
+
 ![](https://imgur.com/iA99VGz.png)
 
 ## Authors
@@ -21,6 +36,8 @@ The script is written by Ciprian Gerstenberger, and collaboration in the present
 Work of Niko Partanen and Michael Rießler has been funded by [Kone Foundation](https://koneensaatio.fi) within [IKDP-2](https://github.com/langdoc/IKDP-2) research project. Joshua Wilbur's contributions have been funded by [Deutsche Forschungsgemeinschaft](http://www.dfg.de) as part of the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/).
 
 ## Citing
+
+If you use the script or create new workflows based on it, please cite the works where we have presented and discussed it.
 
 ```
 @incollection{gerstenbergerEtAl2017b,
