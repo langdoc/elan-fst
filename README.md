@@ -1,16 +1,16 @@
 # ELAN-FST workflow
 
-This repository contains the scripts used in workflows which are described in this [paper](http://www.aclweb.org/anthology/W17-0109), this [paper](http://www.aclweb.org/anthology/W17-0604) and this [poster](publications/gerstenbergerEtAl2017c.pdf). The idea is to populate lemma, pos and morph tiers into ELAN file through open source Finite-State-Transducers developed in [Giellatekno](http://giellatekno.uit.no/).
+This repository contains the scripts used in workflows which are described in this [paper](http://www.aclweb.org/anthology/W17-0109), this [paper](http://www.aclweb.org/anthology/W17-0604) and this [poster](publications/gerstenbergerEtAl2017c.pdf). The idea is to populate lemma, part-of-speech and morphology tiers into ELAN files through open source Finite-State-Transducers developed by [Giellatekno](http://giellatekno.uit.no/) and collaborative projects with them.
 
 The script has been tested in various projects, and the languages it has been applied to up to now are Komi-Zyrian, Kildin Saami, Pite Saami and Northern Saami.
 
-Migration from Giellatekno SVN to GitHub was done in SVN Revision 162169.
+Migration from Giellatekno SVN to GitHub was done in Giellatekno-SVN revision 162169.
 
 ## Using the scripts
 
-The script requires FST-tools to be installed (xfst for the current version, migration to [hfst](https://hfst.github.io/) is planned), and there is access to compiled transducers. In order to compile the transducers it is necessary to install the complete [Giellatekno infrastructure](http://giellatekno.uit.no/doc/infra/infraremake/GettingStartedWithTheNewInfra.html).
+The script requires FST-tools to be installed (xfst for the current version, but migration to [hfst](https://hfst.github.io/) is planned), and there is access to compiled transducers. In order to compile the transducers it is necessary to install the complete [Giellatekno infrastructure](http://giellatekno.uit.no/doc/infra/infraremake/GettingStartedWithTheNewInfra.html).
 
-In this repository we have provided an already compiled transducer for Komi-Zyrian, and the both versions of the scripts can be run after installing lookup with:
+In this repository we have provided the previously compiled transducer for Komi-Zyrian, and both versions of the scripts can be run after installing lookup with:
 
 ```
 git clone https://github.com/langdoc/elan-fst
@@ -23,7 +23,7 @@ Or:
 python3 add_pos2elan_p3.py
 ```
 
-Image below describes the ideal workflow reached with the script. Currently Constraint Grammar based disambiguation is not included, but this is one the improvements that are planned in near future.
+The image below describes the ideal workflow attained using the script. Currently, Constraint Grammar based disambiguation is not included, but this is one of the improvements that are planned for near future.
 
 ![](https://imgur.com/iA99VGz.png)
 
@@ -33,11 +33,11 @@ The script is written by Ciprian Gerstenberger, and collaboration in the present
 
 ## Funding
 
-Work of Niko Partanen and Michael Rießler has been funded by [Kone Foundation](https://koneensaatio.fi) within [IKDP-2](https://github.com/langdoc/IKDP-2) research project. Joshua Wilbur's contributions have been funded by [Deutsche Forschungsgemeinschaft](http://www.dfg.de) as part of the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/).
+Niko Partanen and Michael Rießler's work has been funded by [Kone Foundation](https://koneensaatio.fi) as part of the [IKDP-2](https://github.com/langdoc/IKDP-2) research project. Joshua Wilbur's contributions have been funded by [Deutsche Forschungsgemeinschaft](http://www.dfg.de) as part of the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/).
 
 ## Citing
 
-If you use the script or create new workflows based on it, please cite the papers where we have presented and discussed it.
+If you use the script or create new workflows based on it, please cite our papers in which we have presented and discussed it.
 
 ```
 @incollection{gerstenbergerEtAl2017b,
