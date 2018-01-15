@@ -8,7 +8,7 @@ from xml.dom.minidom import parse, parseString
 
 def main():
     # to be adjusted as needed
-    in_dir = 'input-sje'
+    in_dir = 'example'
     out_dir = 'out_'+in_dir
     cwd = os.getcwd()
     out_dir_path = os.path.join(cwd,out_dir)
@@ -16,7 +16,7 @@ def main():
         os.mkdir(out_dir_path)
 
     # parameters to be adjusted as needed
-    lang = 'sje'
+    lang = 'kpv'
     plup = Popen('which lookup', shell=True, stdout=PIPE, stderr=PIPE)
     olup, elup = plup.communicate()
     print("___ lookup is ",olup.decode())
@@ -25,8 +25,8 @@ def main():
         sys.exit()
 
     lookup = olup.decode().strip()
-    langs_dir = '$GTHOME/langs/'
-    rel_xfst_file = '/src/analyser-gt-desc.xfst'
+    langs_dir = 'analyser/'
+    rel_xfst_file = '/analyser-gt-desc.xfst'
     abs_xfst_file = langs_dir+lang+rel_xfst_file
         
     # command to analyse the input string comming from the left of the pipeline
