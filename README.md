@@ -78,6 +78,4 @@ If you use the script or create new workflows based on it, please cite the works
 
 ```
 
-## License
 
-We need a license
