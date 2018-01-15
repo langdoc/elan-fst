@@ -9,7 +9,7 @@ from xml.dom.minidom import parse, parseString
 def main():
     # to be adjusted as needed
     in_dir = 'example'
-    out_dir = 'out_'+in_dir
+    out_dir = 'out_'+in_dir+'_p2.7'
     cwd = os.getcwd()
     out_dir_path = os.path.join(cwd,out_dir)
     if not os.path.exists(out_dir_path):

@@ -10,8 +10,8 @@ from collections import defaultdict
 
 def main():
     # to be adjusted as needed
-    in_dir = 'input-kpv'
-    out_dir = 'out_'+in_dir
+    in_dir = 'example'
+    out_dir = 'out_'+in_dir+'_p3'
     cwd = os.getcwd()
     out_dir_path = os.path.join(cwd,out_dir)
     if not os.path.exists(out_dir_path):
@@ -29,8 +29,8 @@ def main():
         sys.exit()
 
     lookup = olup.decode().strip()
-    langs_dir = '$GTHOME/langs/'
-    rel_xfst_file = '/src/analyser-gt-desc.xfst'
+    langs_dir = 'analyser/'
+    rel_xfst_file = '/analyser-gt-desc.xfst'
     abs_xfst_file = langs_dir+lang+rel_xfst_file
         
     # command to analyse the input string comming from the left of the pipeline
