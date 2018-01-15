@@ -1,6 +1,6 @@
 # ELAN-FST workflow
 
-This repository contains the scripts used in workflows which are described in this [paper](http://www.aclweb.org/anthology/W17-0109), this [paper](http://www.aclweb.org/anthology/W17-0604) and this [poster](publications/gerstenbergerEtAl2017c.pdf). The idea is to populate lemma, pos and morph tiers into ELAN file through open source Finite-State-Transcducers developed in [Giellatekno](http://giellatekno.uit.no/).
+This repository contains the scripts used in workflows which are described in this [paper](http://www.aclweb.org/anthology/W17-0109), this [paper](http://www.aclweb.org/anthology/W17-0604) and this [poster](publications/gerstenbergerEtAl2017c.pdf). The idea is to populate lemma, pos and morph tiers into ELAN file through open source Finite-State-Transducers developed in [Giellatekno](http://giellatekno.uit.no/).
 
 The script has been tested in various projects, and the languages it has been applied to up to now are Komi-Zyrian, Kildin Saami, Pite Saami and Northern Saami.
 
@@ -37,7 +37,7 @@ Work of Niko Partanen and Michael Rießler has been funded by [Kone Foundation](
 
 ## Citing
 
-If you use the script or create new workflows based on it, please cite the works where we have presented and discussed it.
+If you use the script or create new workflows based on it, please cite the papers where we have presented and discussed it.
 
 ```
 @incollection{gerstenbergerEtAl2017b,
