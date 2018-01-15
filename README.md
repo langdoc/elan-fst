@@ -78,4 +78,7 @@ If you use the script or create new workflows based on it, please cite the paper
 
 ```
 
+## Licensing
+
+Use is governed by [this GNU license](elan-fst/LICENSE).
 
