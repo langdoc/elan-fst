@@ -23,7 +23,7 @@ Or:
 python3 add_pos2elan_p3.py
 ```
 
-Image below describes the ideal workflow reached with the script.
+Image below describes the ideal workflow reached with the script. Currently Constraint Grammar based disambiguation is not included, but this is one the improvements that are planned in near future.
 
 ![](https://imgur.com/iA99VGz.png)
 
