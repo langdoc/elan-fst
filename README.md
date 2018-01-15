@@ -38,16 +38,18 @@ Work of Niko Partanen and Michael Rießler has been funded by [Kone Foundation](
 
 @incollection{gerstenbergerEtAl2017a,
 	Author = {Ciprian Gerstenberger AND Niko Partanen AND Michael Rie{\ss}ler AND Joshua Wilbur},
-	Crossref = {pirinenEtAl2017a},
-	Date-Added = {2017-01-02 14:29:57 +0000},
-	Date-Modified = {2017-02-27 17:46:51 +0000},
+	Title = {Instant annotations},
+	Subtitle = {Applying {NLP} methods to the annotation of spoken language documentation corpora},
+	Editor = {Tommi A. Pirinen AND Michael Rie{\ss}ler AND Trond Trosterud AND Francis M. Tyers},
+	Location = {St. Petersburg},
+	Month = {jan},
+	Publisher = {Association for Computational Linguistics},
+	Series = {ACL Anthology},
+	Title = {Proceedings of the 3rd {I}nternational {W}orkshop on {C}omputational {L}inguistics for {U}ralic languages},
 	Keywords = {language documentation,language technology,computational linguistics},
 	Pages = {25-36},
-	Subtitle = {Applying {NLP} methods to the annotation of spoken language documentation corpora},
-	Title = {Instant annotations},
-	Url = {http://www.aclweb.org/anthology/W17-0604},
-	Xref = {pirinenEtAl2017a},
-	Bdsk-Url-1 = {http://www.aclweb.org/anthology/W17-0604}}
+	Year = {2017},
+	Url = {http://www.aclweb.org/anthology/W17-0604}}
 
 @misc{gerstenbergerEtAl2017c,
 	Author = {Gerstenberger, Ciprian and Partanen, Niko and Rie{\ss}ler, Michael},
