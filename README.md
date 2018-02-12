@@ -27,6 +27,11 @@ The image below describes the ideal workflow attained using the script. Currentl
 
 ![](https://imgur.com/iA99VGz.png)
 
+### Version used for Pite Saami
+
+The version of the pythong script named `add_pos2elan_p3-sje-psdp.py` differs from the other versions by **not** overwriting extant annotations in lemma/pos/morph tiers. The idea is that ambiguities that have been removed manually do not get re-insterted again if an .eaf is processed using this script. However, if extant annotations are incorrect, these incorrect analyses survive. This version is used in the Pite Saami Documentation Project; variations to the original script by Iris Perkmann.
+
+
 ## Authors
 
 The script is written by Ciprian Gerstenberger, and collaboration in the presented workflow has taken place with Niko Partanen, Michael Rießler and Joshua Wilbur.
