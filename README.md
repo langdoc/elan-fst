@@ -29,7 +29,7 @@ The image below describes the ideal workflow attained using the script. Currentl
 
 ### Version used for Pite Saami
 
-The version of the pythong script named `add_pos2elan_p3-sje-psdp.py` differs from the other versions by **not** overwriting extant annotations in lemma/pos/morph tiers. The idea is that ambiguities that have been removed manually do not get re-insterted again if an .eaf is processed using this script. However, if extant annotations are incorrect, these incorrect analyses survive. This version is used in the Pite Saami Documentation Project; variations to the original script by Iris Perkmann.
+The version of the pythong script named `add_pos2elan_p3-sje-psdp.py` differs from the other versions by **not** overwriting extant annotations in lemma/pos/morph tiers. The idea is that ambiguities that have been removed manually do not get re-insterted again if an .eaf is processed using this script. However, if extant annotations are incorrect, these incorrect analyses survive. This version is used in the [http://saami.uni-freiburg.de/psdp/syntax/](Pite Saami Syntax Project) (progeny of the [http://saami.uni-freiburg.de/psdp/](Pite Saami Documentation Project)); variations to the original script by Iris Perkmann.
 
 
 ## Authors
