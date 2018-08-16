@@ -4,7 +4,7 @@ This repository contains the scripts used in workflows which are described in th
 
 The script has been tested in various projects, and the languages it has been applied to up to now are Komi-Zyrian, Kildin Saami, Pite Saami and Northern Saami.
 
-Migration from Giellatekno SVN to GitHub was done in Giellatekno-SVN revision 162169.
+Migration of the source code from Giellatekno SVN to GitHub was done in Giellatekno-SVN revision 162169.
 
 ## Using the scripts
 
@@ -34,15 +34,15 @@ The version of the Python script named `add_pos2elan_p3-sje-psdp.py` differs fro
 
 ## Authors
 
-The script is written by Ciprian Gerstenberger, and collaboration in the presented workflow has taken place with Niko Partanen, Michael Rießler and Joshua Wilbur.
+The script was written by Ciprian Gerstenberger, and collaboration in the presented workflow has taken place with Niko Partanen, Michael Rießler, Joshua Wilbur and Iris Perkmann.
 
 ## Funding
 
-Niko Partanen and Michael Rießler's work has been funded by [Kone Foundation](https://koneensaatio.fi) as part of the [IKDP-2](https://github.com/langdoc/IKDP-2) research project. Joshua Wilbur's contributions have been funded by [Deutsche Forschungsgemeinschaft](http://www.dfg.de) as part of the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/).
+Ciprian Gerstenberger is employed by [Giellatekno](https://giellatekno.uit.no) at [The Arctic University of Norway](https://en.uit.no). Niko Partanen and Michael Rießler's work has been funded by [Kone Foundation](https://koneensaatio.fi) as part of the [IKDP-2](https://github.com/langdoc/IKDP-2) research project. Joshua Wilbur's and Iris Perkmann's contributions have been funded by [Deutsche Forschungsgemeinschaft](http://www.dfg.de) as part of the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/).
 
 ## Citing
 
-If you use the script or create new workflows based on it, please cite our papers in which we have presented and discussed it.
+If you use the script or create new workflows based on it, please provide a link to our script in your documentation. In your  publications, please cite our papers in which we have presented and discussed our work.
 
 ```
 @incollection{gerstenbergerEtAl2017b,
@@ -55,8 +55,8 @@ If you use the script or create new workflows based on it, please cite our paper
 	Series = {ACL Anthology},
 	Title = {Instant annotations in ELAN corpora of spoken and written {K}omi, an endangered language of the {B}arents {S}ea region},
 	Url = {http://www.aclweb.org/anthology/W17-0109},
-	Year = {2017},
-	Bdsk-Url-1 = {http://aclweb.org/anthology/}}
+	Editor = {Antti Arppe AND Jeff Good AND Mans Hulden AND Jordan Lachler AND Alexis Palmer AND Lane Schwartz},
+	Year = {2017}}
 
 @incollection{gerstenbergerEtAl2017a,
 	Author = {Ciprian Gerstenberger AND Niko Partanen AND Michael Rie{\ss}ler AND Joshua Wilbur},
@@ -68,19 +68,9 @@ If you use the script or create new workflows based on it, please cite our paper
 	Publisher = {Association for Computational Linguistics},
 	Series = {ACL Anthology},
 	Title = {Proceedings of the 3rd {I}nternational {W}orkshop on {C}omputational {L}inguistics for {U}ralic languages},
-	Keywords = {language documentation,language technology,computational linguistics},
 	Pages = {25-36},
 	Year = {2017},
 	Url = {http://www.aclweb.org/anthology/W17-0604}}
-
-@misc{gerstenbergerEtAl2017c,
-	Author = {Gerstenberger, Ciprian and Partanen, Niko and Rie{\ss}ler, Michael},
-	Howpublished = {Poster at ComputEL-2, March 6--7, 2017, Honolulu, Hawai'i},
-	Month = {mar},
-	Title = {Instant annotations in {ELAN} corpora of spoken and written {K}omi-{Z}yrian, an endangered language of the {B}arents {S}ea region ({R}ussia)},
-	Year = {2017},
-	Bdsk-Url-1 = {http://dx.doi.org/10.13140/RG.2.2.14503.34727}}
-
 ```
 
 ## Licensing
