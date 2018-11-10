@@ -29,7 +29,7 @@ The image below describes the ideal workflow attained using the script. Currentl
 
 ### Version used for Pite Saami
 
-The version of the Python script named `add_pos2elan_p3-sje-psdp.py` differs from the other versions by **not** overwriting extant annotations in lemma/pos/morph tiers. The idea is that ambiguities that have been removed manually do not get re-inserted again if an .eaf is processed using this script. However, if extant annotations are incorrect, these incorrect analyses survive. This version is used in the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/) (progeny of the [Pite Saami Documentation Project](http://saami.uni-freiburg.de/psdp/)); variations to the original script by Iris Perkmann.
+The version of the Python script named `add_pos2elan_p3-sje-psdp.py` differs slightly from the other versions in two ways. First, it adds annotations on a gloss tier (child of the pos tier) with an (ideally) brief, generl English translation of the relevant lemma (translations come from an external xml file containing lemmas and translations). Second, information on the individual non-final components of compounds are also included in annotations on in the part-of-speech, morphology and gloss tiers.  This version is used in the [Pite Saami Syntax Project](http://saami.uni-freiburg.de/psdp/syntax/) (progeny of the [Pite Saami Documentation Project](http://saami.uni-freiburg.de/psdp/)); variations to the original script by Iris Perkmann and Joshua Wilbur.
 
 
 ## Authors
