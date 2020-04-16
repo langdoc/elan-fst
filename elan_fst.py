@@ -98,7 +98,7 @@ def tokenize_elan(root, target_type = 'word token', orig_tier_part = 'orth', new
     root.find(".//HEADER/PROPERTY[@NAME='lastUsedAnnotationId']").text = str(max_id)
     return(root)
 
-def annotate_elan(root, cg, orig_tier_part = 'word'):
+def annotate_elan(root, cg, orig_tier_part = 'word', lemma_tier_part = 'lemma', pos_tier_part = 'pos', morph_tier_part = 'morph', syntax_tier_part = 'syntax', syntax = False):
     
     transcription_tiers, max_id = get_elan_info(root, orig_tier_part)
 
@@ -120,7 +120,61 @@ def annotate_elan(root, cg, orig_tier_part = 'word'):
     p_counter = -1
     
     for tier in transcription_tiers:
-    
+        
+        # Both of the operations here should be done with distinct functions
+        # Tier types need to be arguments
+        
+        morph_tier_id = tier['tier_id'].replace(orig_tier_part, morph_tier_part)
+        pos_tier_id = tier['tier_id'].replace(orig_tier_part, pos_tier_part)
+        lemma_tier_id = tier['tier_id'].replace(orig_tier_part, lemma_tier_part)
+        syntax_tier_id = tier['tier_id'].replace(orig_tier_part, syntax_tier_part)
+
+        morph_tier = root.find(f".//TIER[@TIER_ID='{morph_tier_id}']")
+        pos_tier = root.find(f".//TIER[@TIER_ID='{pos_tier_id}']")
+        lemma_tier = root.find(f".//TIER[@TIER_ID='{lemma_tier_id}']")
+        syntax_tier = root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']")
+        
+        i_position = get_last_tier_position(root)
+        
+        if root.find(f".//TIER[@TIER_ID='{morph_tier_id}']") == None:
+            morph_tier = ET.Element('TIER')
+            morph_tier.set('LINGUISTIC_TYPE_REF', 'morphT')
+            morph_tier.set('PARENT_REF', pos_tier_id)
+            morph_tier.set('TIER_ID', morph_tier_id)
+            root.insert(i_position, morph_tier)
+        else:
+            morph_tier = root.find(f".//TIER[@TIER_ID='{morph_tier_id}']")
+
+        if root.find(f".//TIER[@TIER_ID='{pos_tier_id}']") == None:
+            pos_tier = ET.Element('TIER')
+            pos_tier.set('LINGUISTIC_TYPE_REF', 'posT')
+            pos_tier.set('PARENT_REF', lemma_tier_id)
+            pos_tier.set('TIER_ID', pos_tier_id)
+            root.insert(i_position, pos_tier)
+        else:
+            pos_tier = root.find(f".//TIER[@TIER_ID='{pos_tier_id}']")
+
+        if root.find(f".//TIER[@TIER_ID='{lemma_tier_id}']") == None:
+            lemma_tier = ET.Element('TIER')
+            lemma_tier.set('LINGUISTIC_TYPE_REF', 'lemmaT')
+            lemma_tier.set('PARENT_REF', tier['tier_id'])
+            lemma_tier.set('TIER_ID', lemma_tier_id)
+            root.insert(i_position, lemma_tier)
+        else:
+            lemma_tier = root.find(f".//TIER[@TIER_ID='{lemma_tier_id}']")
+            
+        if syntax:
+
+            if root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']") == None:
+                syntax_tier = ET.Element('TIER')
+                syntax_tier.set('LINGUISTIC_TYPE_REF', 'syntaxT')
+                syntax_tier.set('PARENT_REF', pos_tier_id)
+                syntax_tier.set('TIER_ID', syntax_tier_id)
+                root.insert(i_position, syntax_tier)
+            else:
+                syntax_tier = root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']")
+
+            
         wlp = []
 
         tokens = []
@@ -161,16 +215,6 @@ def annotate_elan(root, cg, orig_tier_part = 'word'):
                 current_dict[key] = pm_dict
 
             wlp.append([token[0], token[1], current_dict])
-            
-        morph_tier_id = tier['tier_id'].replace("word", "morph")
-        pos_tier_id = tier['tier_id'].replace("word", "pos")
-        lemma_tier_id = tier['tier_id'].replace("word", "lemma")
-        syntax_tier_id = tier['tier_id'].replace("word", "syntax")
-
-        morph_tier = root.find(f".//TIER[@TIER_ID='{morph_tier_id}']")
-        pos_tier = root.find(f".//TIER[@TIER_ID='{pos_tier_id}']")
-        lemma_tier = root.find(f".//TIER[@TIER_ID='{lemma_tier_id}']")
-        syntax_tier = root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']")
 
         for i in range(len(wlp)):
 
@@ -223,25 +267,27 @@ def annotate_elan(root, cg, orig_tier_part = 'word'):
                         m_v.text = m_text
                         
                         morph_list = pos_dict[p_key]
+                        
+                    if syntax:
                     
-                    for s_i, s_m in enumerate(morph_list):
-                        t_counter += 1
-                        s_a_id = 'a'+str(t_counter)
-                        s_a = ET.SubElement(syntax_tier, 'ANNOTATION')
-                        s_r = ET.SubElement(s_a, 'REF_ANNOTATION')
-                        s_v = ET.SubElement(s_r, 'ANNOTATION_VALUE')
-                        s_r.set('ANNOTATION_ID', s_a_id)
-                        s_r.set('ANNOTATION_REF', p_a_id)
-                        if s_i > 0:
-                            previous_syntax = root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']/ANNOTATION[last()-1]/REF_ANNOTATION").attrib['ANNOTATION_ID']
-                            s_r.set('PREVIOUS_ANNOTATION', previous_syntax)
-                        s_text = morph_list[s_i]
-                        try:
-                            s_tag = re.search('(@.+?)$', s_text).group(1)
-                        except AttributeError:
-                            s_tag = '_' # apply your error handling
+                        for s_i, s_m in enumerate(morph_list):
+                            t_counter += 1
+                            s_a_id = 'a'+str(t_counter)
+                            s_a = ET.SubElement(syntax_tier, 'ANNOTATION')
+                            s_r = ET.SubElement(s_a, 'REF_ANNOTATION')
+                            s_v = ET.SubElement(s_r, 'ANNOTATION_VALUE')
+                            s_r.set('ANNOTATION_ID', s_a_id)
+                            s_r.set('ANNOTATION_REF', p_a_id)
+                            if s_i > 0:
+                                previous_syntax = root.find(f".//TIER[@TIER_ID='{syntax_tier_id}']/ANNOTATION[last()-1]/REF_ANNOTATION").attrib['ANNOTATION_ID']
+                                s_r.set('PREVIOUS_ANNOTATION', previous_syntax)
+                            s_text = morph_list[s_i]
+                            try:
+                                s_tag = re.search('(@.+?)$', s_text).group(1)
+                            except AttributeError:
+                                s_tag = '_' # apply your error handling
 
-                        s_v.text = s_tag
+                            s_v.text = s_tag
 
     return(root)
 
