@@ -1,13 +1,9 @@
+# This script can be called with:
+# python annotate_elan_oulu.py input.eaf target.eaf
+
 from elan_fst import *
 
 import sys
-
-#print(len(str(sys.argv))
-
-# if len(str(sys.argv)) != 3:
-
-#print("Too many arguments provided. Please call the script as: python annotate_elan_oulu.py input.eaf target.eaf"   
-#exit()
 
 elan_file_path = sys.argv[1]
 with open(elan_file_path, 'r') as file:
@@ -26,5 +22,6 @@ elan_annotated = annotate_elan(elan_tokenized, cg = cg)
 
 ET.ElementTree(elan_annotated).write(sys.argv[2], xml_declaration=True, encoding='utf-8', method="xml")
 
+# This kind of pretty printing and validation were also useful
 #! xmllint --format - < /Users/niko/github/oulu-elan/test.eaf > /Users/niko/github/oulu-elan/test-pretty.eaf
 #! xmllint --noout --schema /Users/niko/github/oulu-elan/EAFv3.0.xsd /Users/niko/github/oulu-elan/test-pretty.eaf
